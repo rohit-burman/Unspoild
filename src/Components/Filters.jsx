@@ -1,25 +1,20 @@
 import React, { useState } from "react";
+import { db as db } from "../firebase";
+import { addDoc, collection } from "firebase/firestore";
 
 const Filters = () => {
-  const [items, setItems] = useState([]);
+  const [name, setname] = useState("");
+  const [date, setdate] = useState("");
+  const [tag, settag] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const name = e.target.name.value;
-    const date = e.target.date.value;
-    const tag = e.target.tag.value;
+    const docref = await addDoc(collection(db, "items"), { name, date, tag });
 
-    // setItems([...items, { name, date, tag }]);
-
-    const items_old = localStorage.getItem("items");
-    if (items_old) {
-      setItems([...items_old, { name, date, tag }]);
-    } else {
-      setItems([{ name, date, tag }]);
-    }
-
-    localStorage.setItem("items", JSON.stringify(items));
+    setname("");
+    setdate("");
+    settag("");
   };
 
   return (
@@ -38,33 +33,51 @@ const Filters = () => {
         </button>
       </div>
 
-      <div class="modal" id="create" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Add An Item</h5>
+      <div className="modal" id="create" tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Add An Item</h5>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <form onSubmit={handleSubmit}>
                 <div className="input">
                   <label htmlFor="name">Item</label>
-                  <input type="text" name="name" id="name" />
+                  <input
+                    onChange={(e) => setname(e.target.value)}
+                    value={name}
+                    type="text"
+                    name="name"
+                    id="name"
+                  />
                 </div>
                 <div className="input">
                   <label htmlFor="date">Expiry Date</label>
-                  <input type="text" name="date" id="date" />
+                  <input
+                    onChange={(e) => setdate(e.target.value)}
+                    value={date}
+                    type="date"
+                    name="date"
+                    id="date"
+                  />
                 </div>
                 <div className="input">
                   <label htmlFor="tag">Tag</label>
-                  <input type="text" name="tag" id="tag" />
+                  <input
+                    onChange={(e) => settag(e.target.value)}
+                    value={tag}
+                    type="text"
+                    name="tag"
+                    id="tag"
+                  />
                 </div>
                 <div className="btns">
-                  <button type="submit" class="btn add">
+                  <button type="submit" className="btn add">
                     Add Item
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-bs-dismiss="modal"
                   >
                     Close

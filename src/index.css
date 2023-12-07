@@ -123,5 +123,14 @@ nav {
   align-items: center;
   font-size: 2rem;
   color: #da5153;
+  border: none;
+  outline: none;
   border-radius: 0 20px 20px 0;
+}
+
+/* ITEMS */
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
