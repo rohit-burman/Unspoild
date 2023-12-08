@@ -5,54 +5,157 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  background-color: #40513B;
+}
+
 /* NAVBAR */
 .logo svg {
-  width: 10%;
+  width: 80%;
 }
 
 nav {
-  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 
-/* FILTERS */
-.filters {
+
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+/* SEARCH */
+.searches {
   display: flex;
   justify-content: space-between;
   padding: 50px 100px;
-  padding-top: 0;
 }
 
-.filters button {
+.search input {
+  width: 75dvw;
+  padding: 20px 40px;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  background-color: #ddd;
+}
+
+.add {
+  background-color: #ddd;
+  color: #40513B;
+  border: none;
+  outline: none;
+  padding: 20px 40px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.searches button {
   background-color: transparent;
   border: none;
   outline: none;
 }
 
-.tabs {
+/* FILTERS */
+.filters {
   display: flex;
-  gap: 30px;
+  gap: 50px;
+  padding: 50px 100px;
+  padding-top: 0;
 }
 
 .filter {
-  background-color: #ccc;
-  padding: 8px 28px;
+  padding: 10px 30px;
+  background-color: #a4c59a;
   border-radius: 200px;
   cursor: pointer;
 }
 
-.new {
+.filter:focus {
+  background-color: #a4c59a;
+  color: #ddd
+}
+
+/* ITEM */
+.item-details {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 70dvw;
+  padding: 20px 40px;
+  padding-right: 300px;
+}
+
+.delete {
+  width: 10dvw;
+  border: none;
+  outline: none;
+  background-color: #5e0709;
+  color: white;
+}
+
+.cross {
+  transform: scale(1.3);
+  transition: all 0.2s ease-out;
+}
+
+.delete:hover .cross {
+  transform: scale(2);
+}
+
+.item {
+  display: flex;
+  padding: 0 100px;
+  background-color: #374433;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.date-head {
+  font-size: 1rem;
+}
+
+/* MODAL */
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-  background-color: #BC6C25;
-  color: #fff;
 }
 
-.filter:hover {
-  opacity: 0.9;
+.input input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  transition: all 0.2s ease;
 }
 
-/* ADD MODAL */
+.input input:focus {
+  border-bottom: 1px solid #488336;
+}
+
+.btns {
+  display: flex;
+  gap: 30px;
+}
+
+
+
+
+
+/* ADD MODAL
 .add {
   background-color: #BC6C25;
   color: white;
@@ -93,7 +196,7 @@ nav {
   gap: 30px;
 }
 
-/* ITEM BOX */
+ITEM BOX
 .item {
   display: flex;
   height: 100px;
@@ -128,9 +231,20 @@ nav {
   border-radius: 0 20px 20px 0;
 }
 
-/* ITEMS */
+ITEMS
 .items {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
+
+SEARCH
+.search {
+  width: 100dvw;
+  
+}
+
+#srch {
+  width: 100%;
+  padding: 10px 30px;
+} */
