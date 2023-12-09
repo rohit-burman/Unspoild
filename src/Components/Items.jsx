@@ -145,6 +145,7 @@ const Items = () => {
                     onChange={(e) => setname(e.target.value)}
                     value={name}
                     type="text"
+                    required={true}
                     name="name"
                     id="name"
                   />
@@ -155,6 +156,7 @@ const Items = () => {
                     onChange={(e) => setdate(e.target.value)}
                     value={date}
                     type="date"
+                    required={true}
                     name="date"
                     id="date"
                   />
