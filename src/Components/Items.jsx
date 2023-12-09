@@ -17,7 +17,7 @@ const Items = () => {
   const [search, setsearch] = useState("");
   const [name, setname] = useState("");
   const [date, setdate] = useState("");
-  const [tag, settag] = useState("");
+  const [tag, settag] = useState("food");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -135,7 +135,7 @@ const Items = () => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Add An Item</h5>
+              <h4 className="modal-title">Add An Item</h4>
             </div>
             <div className="modal-body">
               <form onSubmit={handleSubmit}>
@@ -162,23 +162,16 @@ const Items = () => {
                 <div className="input">
                   <label htmlFor="tag">Tag</label>
                   <select
+                    className="text-center"
                     name="tag"
                     id="tag"
-                    value={tag === "" ? "food" : tag}
+                    value={tag}
                     onChange={(e) => settag(e.target.value)}
                   >
                     <option value="food">Food</option>
                     <option value="med">Medicine</option>
                     <option value="cosmetics">Cosmetics</option>
                   </select>
-
-                  {/* <input
-                    onChange={(e) => settag(e.target.value)}
-                    value={tag}
-                    type="text"
-                    name="tag"
-                    id="tag"
-                  /> */}
                 </div>
                 <div className="btns">
                   <button type="submit" className="btn btn-success">

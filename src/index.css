@@ -57,6 +57,10 @@ nav {
   font-size: 1.2rem;
 }
 
+.add:hover {
+  opacity: 0.9;
+}
+
 .searches button {
   background-color: transparent;
   border: none;
@@ -78,10 +82,10 @@ nav {
   cursor: pointer;
 }
 
-.filter:focus {
-  background-color: #a4c59a;
-  color: #ddd
+.filter:hover {
+  opacity: 0.8;
 }
+
 
 /* ITEM */
 .item-details {
@@ -150,7 +154,6 @@ nav {
   display: flex;
   gap: 30px;
 }
-
 
 
 
