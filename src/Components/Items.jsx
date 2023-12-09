@@ -26,7 +26,7 @@ const Items = () => {
 
     setname("");
     setdate("");
-    settag("");
+    settag("food");
   };
 
   const handleMed = () => {
