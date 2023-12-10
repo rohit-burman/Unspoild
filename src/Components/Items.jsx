@@ -140,7 +140,7 @@ const Items = () => {
             <div className="modal-body">
               <form onSubmit={handleSubmit}>
                 <div className="input">
-                  <label htmlFor="name">Item</label>
+                  <label htmlFor="name">Name</label>
                   <input
                     onChange={(e) => setname(e.target.value)}
                     value={name}
