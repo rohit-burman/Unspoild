@@ -1,10 +1,30 @@
-import React from "react";
+// SignInPage.js
+// SignInPage.js
+import React, { useState } from "react";
+import "./SignInPage.css"; // Import your CSS file if you have one
 
-const Navbar = ({onLogout}) => {
+const SignInPage = ({ setAuthenticated }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [isSignUp, setIsSignUp] = useState(false);
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    // For debugging purposes, set authentication status to true
+    setAuthenticated(true);
+  };
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    // For debugging purposes, set authentication status to true
+    setAuthenticated(true);
+  };
+
   return (
-    <>
-      <nav>
-        <div className="logo">
+    
+    <div className="sign-in-page">
+      <div className="logo">
           <svg
             width="400"
             height="100"
@@ -22,18 +42,56 @@ const Navbar = ({onLogout}) => {
             />
           </svg>
         </div>
-        <div>
-        <ul>
-        <li>Home</li>
-        {/* Other navigation items */}
-        <li>
-          <button onClick={onLogout}>Logout</button>
-        </li>
-      </ul>
-        </div>
-      </nav>
-    </>
+      
+      <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
+      <div className="login-box">
+        <h1>{isSignUp ? "Create an account" : "Enter your credentials"}</h1>
+        <form>
+          <p>Your Email</p>
+          <input
+            type="text"
+            id="emailid"
+            name="email"
+            placeholder="Enter email"
+            className="input-style"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <p>Password</p>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            className="input-style"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          {isSignUp && (
+            <>
+              <p>Username</p>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter username"
+                className="input-style"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </>
+          )}
+          <input type="submit" value={isSignUp ? "Sign Up" : "Sign In"} className="input-style" onClick={isSignUp ? handleSignUp : handleSignIn} /><br />
+          <p>{isSignUp ? "Already have an account? Sign in here:" : "Don't have an account? Sign up here:"}</p>
+          <button type="button" onClick={() => setIsSignUp(!isSignUp)}>
+            {isSignUp ? "Sign In" : "Sign Up"}
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
-export default Navbar;
+export default SignInPage;

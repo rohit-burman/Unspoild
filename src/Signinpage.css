@@ -1,0 +1,94 @@
+/* SignInPage.css */
+
+.sign-in-page {
+    /* display: flex; */
+    height: 100vh;
+    text-align: center;
+    /* margin-top: 50px; */
+    background-color: #40513B;
+    color: #fff;
+    padding: 20px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.login-box {
+    max-width: 450px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    background-color: #fff;
+}
+
+.logo {
+    padding-bottom: 50px;
+}
+
+/* .login-form {
+    left: 1%;
+    right: 1%;
+    position: absolute;
+    width:25%;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+    display: grid;
+    grid-template-columns: auto;
+    align-content: center;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+} */
+
+
+.input-style {
+    width: 99%;
+    height: 6vh;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 1rem;
+
+}
+
+input[type="submit"] {
+    background-color: #40513B;
+    margin: 5px 0 20px 0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #344434;
+}
+
+button {
+    background-color: #40513B;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 0.7rem;
+}
+
+button:hover {
+    background-color: #344434;
+}
+
+h1 {
+    font-size: larger;
+    color: rgb(34, 34, 34);
+}
+
+p {
+    color: rgb(49, 49, 47);
+    margin: auto;
+}
+
+h2{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
