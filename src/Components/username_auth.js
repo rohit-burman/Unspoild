@@ -51,7 +51,7 @@ const getUsername = async (uid) => {
   if (snapshot.exists()) {
     return snapshot.val().username;
   } else {
-    return null; // Handle the case where username is not found
+    return null; // username is not found
   }
 };
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase_auth";
 import { database, ref, set, serverTimestamp } from "./firebase_auth";
-import "./SignInPage.css"; // Import your CSS file if you have one
+import "./SignInPage.css";
 
 const SignInPage = ({ setAuthenticated }) => {
   const [email, setEmail] = useState("");

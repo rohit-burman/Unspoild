@@ -10,11 +10,10 @@ import { auth } from "./firebase_auth";
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
 
-  // For debugging purposes, set authentication status to true
-  // Remove or comment out the line below when you want to implement actual authentication logic
+  // debug
   // setAuthenticated(true);
   const handleLogout = () => {
-    // For debugging purposes, set authentication status to false on logout
+    //debug
     setAuthenticated(false);
     auth.signOut();
   };
@@ -23,10 +22,10 @@ function App() {
     <>
       {authenticated && <Navbar onLogout={handleLogout} />}
       {authenticated ? (
-        // Render the main content when authenticated
+        //authenticated
         <Items />
       ) : (
-        // Render the sign-in page when not authenticated
+        // not authenticated
         <SignInPage setAuthenticated={setAuthenticated} />
       )}
     </>
