@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
+import { useAuth } from './username_auth';
 import {
   collection,
   deleteDoc,
@@ -7,11 +8,13 @@ import {
   onSnapshot,
   query,
   addDoc,
+  where,
 } from "firebase/firestore";
 import { db } from "../firebase";
 import { motion } from "framer-motion";
 
 const Items = () => {
+  const { getCurrentUser}= useAuth();
   const [items, setitems] = useState([]);
   const [changed, setchanged] = useState([]);
   const [search, setsearch] = useState("");
@@ -21,8 +24,12 @@ const Items = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    const user = await getCurrentUser();
+    const userId = user.uid;
+    // console.log(getCurrentUser.uid)
 
-    const docref = await addDoc(collection(db, "items"), { name, date, tag });
+    const docref = await addDoc(collection(db, "items"), { userId: userId, name, date, tag });
 
     setname("");
     setdate("");
@@ -58,18 +65,54 @@ const Items = () => {
     await deleteDoc(doc(db, "items", id));
   };
 
-  useEffect(() => {
-    const q = query(collection(db, "items"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let itemArr = [];
-      querySnapshot.forEach((doc) => {
-        itemArr.push({ ...doc.data(), id: doc.id });
-      });
-      setitems(itemArr);
-      setchanged(itemArr);
-    });
+  // useEffect(() => {
+  //   const q = query(collection(db, "items"), where("userId","==",getCurrentUser.uid));
+  //   const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  //     let itemArr = [];
+  //     querySnapshot.forEach((doc) => {
+  //       itemArr.push({ ...doc.data(), id: doc.id });
+  //     });
+  //     setitems(itemArr);
+  //     setchanged(itemArr);
+  //   });
 
-    return () => unsubscribe();
+  //   return () => unsubscribe();
+  // }, [getCurrentUser]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const user = await getCurrentUser();
+        // console.log("Current User ", user);
+  
+        if (!user) {
+          // console.log("No Current User.");
+          return;
+        }
+  
+        const userId = user.uid;
+        // console.log("User ID:", userId);
+  
+        const q = query(collection(db, "items"), where("userId", "==", userId));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+          let itemArr = [];
+          querySnapshot.forEach((doc) => {
+            itemArr.push({ ...doc.data(), id: doc.id });
+          });
+          setitems(itemArr);
+          setchanged(itemArr);
+        });
+  
+        return () => {
+          // console.log("Unsubscribed from Items Snapshot");
+          unsubscribe();
+        };
+      } catch (error) {
+        // console.error("Error user:", error);
+      }
+    };
+  
+    fetchData();
   }, []);
 
   return (

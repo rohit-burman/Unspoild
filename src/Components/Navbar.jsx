@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { auth } from '../firebase_auth';
-import { getUsername } from './username_auth';
+import { getUsername} from './username_auth';
 
 
 
