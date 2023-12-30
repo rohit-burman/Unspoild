@@ -4,7 +4,7 @@ import Filters from "./Components/Filters";
 import Item from "./Components/Item";
 import Items from "./Components/Items";
 import Navbar from "./Components/Navbar";
-import SignInPage from "./SignInPage";
+import SignInPage from "./signinPage";
 import { auth } from "./firebase_auth";
 
 function App() {
