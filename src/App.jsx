@@ -5,6 +5,7 @@ import Item from "./Components/Item";
 import Items from "./Components/Items";
 import Navbar from "./Components/Navbar";
 import SignInPage from "./SignInPage";
+import { auth } from "./firebase_auth";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -15,6 +16,7 @@ function App() {
   const handleLogout = () => {
     // For debugging purposes, set authentication status to false on logout
     setAuthenticated(false);
+    auth.signOut();
   };
 
   return (

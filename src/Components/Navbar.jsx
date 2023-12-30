@@ -1,10 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import { auth } from '../firebase_auth';
+import { getUsername } from './username_auth';
 
-const Navbar = ({onLogout}) => {
+
+
+const Navbar = ({ onLogout }) => {
+  const [username, setUsername] = useState(null);
+
+  useEffect(() => {
+    const fetchUsername = async () => {
+      if (auth.currentUser) {
+        const uid = auth.currentUser.uid;
+        const fetchedUsername = await getUsername(uid);
+        setUsername(fetchedUsername);
+      }
+    };
+
+    fetchUsername();
+  }, []);
+
+  const logo = {
+    // justifyContent: 'space-between',
+
+  };
+  const nav = {
+    display: 'flex',
+    justifyContent: 'center',
+
+    flexDirection: 'column',
+
+  };
+
+  const logoutAndUsername = {
+    
+    // marginTop: '50px',
+    // alignItems:'flex-end',
+    // margin: 'auto',
+    // borderRadius: '5px',
+    
+    // display: 'flex',
+    // alignContent: 'center',
+    // padding: '20px',
+    // border: '1px solid #ccc',
+    // textAlign: 'center',
+
+    display: 'flex',
+    padding: '20px',
+    margin: '0 50px 0 0',
+    textAlign:'center',
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'flex-end',
+    alignContent: 'stretch',
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#609966',
+    margin: '3px',
+  };
+  const usernameP = {
+    color: '#ddd',
+    margin:'0 20px 0 0',
+  };
+
+
   return (
     <>
-      <nav>
-        <div className="logo">
+      <nav style={nav}>
+        <div style={logo} className="logo">
+        <div style={{ display: 'flex', alignItems: 'center' ,justifyContent: 'center' }}>
           <svg
             width="400"
             height="100"
@@ -21,15 +86,15 @@ const Navbar = ({onLogout}) => {
               fill="#609966"
             />
           </svg>
+          </div>
         </div>
-        <div>
-        <ul>
-        <li>Home</li>
-        {/* Other navigation items */}
-        <li>
-          <button onClick={onLogout}>Logout</button>
-        </li>
-      </ul>
+        <div style={logoutAndUsername}>
+          {/* <ul> */}
+          {/* Other navigation items */}
+          {/* </ul> */}
+          {username && <p style={usernameP}>Welcome, {username} !</p>}
+          <button onClick={onLogout} style={buttonStyle}>Logout</button>
+
         </div>
       </nav>
     </>
