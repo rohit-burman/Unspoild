@@ -26,9 +26,7 @@ const Navbar = ({ onLogout }) => {
   const nav = {
     display: 'flex',
     justifyContent: 'center',
-
     flexDirection: 'column',
-
   };
 
   const logoutAndUsername = {
@@ -56,12 +54,19 @@ const Navbar = ({ onLogout }) => {
   };
 
   const buttonStyle = {
-    backgroundColor: '#609966',
-    margin: '3px',
+    backgroundColor: '#a4c59a',
+    margin: '8px',
+    color: '#252525',
+    borderRadius: ' 50px',
+    padding: '12px 17px',
+    fontSize:'24px',
+    fontWeight:'500'
   };
   const usernameP = {
     color: '#ddd',
     margin:'0 20px 0 0',
+    fontSize:'24px',
+    fontWeight:'500'
   };
 
 
