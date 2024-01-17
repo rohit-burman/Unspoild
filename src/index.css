@@ -34,28 +34,32 @@ nav {
 .searches {
   display: flex;
   justify-content: space-between;
-  padding: 50px 100px;
+  padding: 30px 30px;
+  align-items: center;
 }
 
 .search input {
-  width: 75dvw;
+  width: 83dvw;
   padding: 20px 40px;
   border-radius: 100px;
   border: none;
   outline: none;
   background-color: #ddd;
+  border-block-style: outset;
 }
 
 .add {
   background-color: #ddd;
-  
+  display: flex-end;
+  align-self: baseline;
   color: #40513B;
   border: none;
   outline: none;
-  padding: 20px 40px;
+  padding: 18px 40px;
   border-radius: 100px;
   font-weight: 700;
   font-size: 1.2rem;
+  border-block-style: outset;
 }
 
 .add:hover {
@@ -81,6 +85,9 @@ nav {
   background-color: #a4c59a;
   border-radius: 200px;
   cursor: pointer;
+  border-block-style: outset;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .filter:hover {
@@ -125,6 +132,7 @@ nav {
 
 .date-head {
   font-size: 1rem;
+  color: #ddd;
 }
 
 /* MODAL */
