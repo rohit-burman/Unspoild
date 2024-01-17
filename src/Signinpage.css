@@ -20,8 +20,23 @@
 }
 
 .logo {
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
+    width: 28dvw;
+    margin: 0 auto;
 }
+
+.intro p {
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin:20px auto;
+    margin-bottom: 30px;
+    font-size: 1.4 rem;
+    width:47dvw
+}
+
+
+
 
 /* .login-form {
     left: 1%;

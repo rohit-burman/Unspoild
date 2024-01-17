@@ -57,6 +57,13 @@ return (
         />
       </svg>
     </div>
+    <div className="intro">
+      <p>A platform to intelligently keep track of your favoriet products'
+        expiration dates and use them to their fullest!
+      </p>
+
+    </div>
+
 
     <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
     <div className="login-box">
