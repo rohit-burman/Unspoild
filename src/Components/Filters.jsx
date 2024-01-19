@@ -16,7 +16,6 @@ const Filters = () => {
     setdate("");
     settag("");
   };
-
   return (
     <>
       <div className="filters">

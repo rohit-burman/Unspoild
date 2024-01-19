@@ -11,17 +11,26 @@
 }
 
 .login-box {
+    
     max-width: 450px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 0.3rem;
-    background-color: #fff;
+    margin: 0px;
+    /* padding: 20px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 0.3rem; */
+    background-color:#f0f3e4;
+    padding: 30px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+    
 
 .logo {
     /* padding-bottom: 50px; */
-    width: 28dvw;
+    width: 35dvw;
     margin: 0 auto;
 }
 
@@ -53,16 +62,70 @@
     border-radius: 4px;
 } */
 
+.login-box,
+.graphics-info {
+    flex: 1;
+}
+.outer-container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
 
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 0px; 
+    min-height: 50  0px;
+    align-items: stretch; /* Center was default */
+    border-radius: 15px;
+    overflow: hidden; /* rounded corners clip */
+    background-color: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.graphics-info {
+    background-image: url('https://source.unsplash.com/green-trees-on-the-forest-0Ws_-v4Y_wY'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-origin: content-box; */
+    background-size: cover;
+    padding: 50px 80px 20px 80px;
+    /* background-color: #353831; */
+    color: #f8f9fa;
+}
+
+.graphics-info h2 {
+    margin-bottom: 30px;
+    color: #f8f9fa;
+    font-size: 50px;
+}
+.graphics-info p {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #f8f9fa;
+    font-size: large;
+}
+
+.quotes blockquote {
+    font-style: italic;
+    margin-top: 50px;
+    font-size: x-large;
+}
+
+
+/* ////////////////////// */
 .input-style {
     width: 99%;
     height: 6vh;
     padding: 10px;
     margin: 5px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #344434;
     box-sizing: border-box;
     border-radius: 1rem;
+    background-color: #EDF1D6;
 
 }
 
@@ -104,4 +167,5 @@ p {
 
 h2{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #40513B;
 }
