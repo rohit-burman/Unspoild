@@ -25,7 +25,7 @@ const Filters = () => {
           <div className="filter">Food</div>
         </div>
 
-        <button data-bs-toggle="modal" data-bs-target="#create">
+        <button data-bs-toggle="modal" data-bs-target="#create" className="newButton">
           <div className="new filter">
             <i className="fa-solid fa-plus"></i> <span>New</span>
           </div>
