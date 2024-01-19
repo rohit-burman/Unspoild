@@ -121,9 +121,6 @@ const SignInPage = ({ setAuthenticated }) => {
                It saves you time, money, and hassle, and helps you live a more sustainable and healthy lifestyle.</p>
 
             <div className="quotes">
-              {/* <blockquote>
-                "The only way to do great work is to love what you do." - Steve Jobs
-              </blockquote> */}
               <blockquote>
                 "Remember, don't let your products spoil, use Unspoid!"
               </blockquote>
