@@ -33,7 +33,7 @@ const Item = ({ name, date, tag, id, handleDelete }) => {
           <div className="item-type">{tag}</div>
           <div className="date">
             <p className="date-head">Expires on</p>
-            <p>{date}</p>
+            <p className="date-head">{date}</p>
             {/* <button onClick={handle}>Click</button> */}
           </div>
         </div>
