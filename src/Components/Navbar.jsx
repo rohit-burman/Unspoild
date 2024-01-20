@@ -21,7 +21,7 @@ const Navbar = ({ onLogout }) => {
 
   const logo = {
     // justifyContent: 'space-between',
-
+    
   };
   const nav = {
     display: 'flex',
@@ -58,9 +58,10 @@ const Navbar = ({ onLogout }) => {
     margin: '8px',
     color: '#252525',
     borderRadius: ' 50px',
-    padding: '12px 17px',
+    padding: '8px 18px',
     fontSize:'24px',
-    fontWeight:'500'
+    fontWeight:'500',
+    borderBlockStyle: "outset",
   };
   const usernameP = {
     color: '#ddd',
