@@ -122,7 +122,7 @@ const SignInPage = ({ setAuthenticated }) => {
 
             <div className="quotes">
               <blockquote>
-                "Remember, don't let your products spoil, use Unspoid!"
+                "Remember, don't let your products spoil, use Unspoild!"
               </blockquote>
               
             </div>
