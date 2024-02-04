@@ -117,7 +117,7 @@ const SignInPage = ({ setAuthenticated }) => {
           </div>
           <div className="graphics-info">
             <h2>Welcome</h2>
-            <p>Unspoid is the ultimate solution for managing your products and avoiding food waste.
+            <p>Unspoild is the ultimate solution for managing your products and avoiding food waste.
                It saves you time, money, and hassle, and helps you live a more sustainable and healthy lifestyle.</p>
 
             <div className="quotes">
